@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @ApiOperation(value = "getInt", httpMethod = "POST")
-    @RequestMapping
+    @RequestMapping("/getInt")
     public int getInt() {
         return 0;
     }
