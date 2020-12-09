@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -20,5 +21,12 @@ public class DemoConfig {
                 .paths(PathSelectors.any())
                 .build();
 
+    }
+
+    @Bean
+    public RequestMappingHandlerMapping handlerMapping() {
+        RequestMappingHandlerMapping requestMappingHandlerMapping = new RequestMappingHandlerMapping();
+        requestMappingHandlerMapping.setAlwaysUseFullPath(true);
+        return requestMappingHandlerMapping;
     }
 }
